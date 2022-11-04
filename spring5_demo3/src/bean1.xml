@@ -9,7 +9,7 @@
 
 
 <!--    开启扫描-->
-    <context:component-scan base-package="com.atguigu.spring5.aop"></context:component-scan>
+    <context:component-scan base-package="com.qyj.spring5.aop"></context:component-scan>
 
 <!--    开启aspectJ生成代理对象-->
     <aop:aspectj-autoproxy></aop:aspectj-autoproxy>

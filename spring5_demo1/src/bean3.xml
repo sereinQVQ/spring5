@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="myBean" class="com.atguigu.spring5.factoryBean.MyBean">
+    <bean id="myBean" class="com.qyj.spring5.factoryBean.MyBean">
 
     </bean>
 

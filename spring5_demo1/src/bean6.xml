@@ -4,9 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="emp" class="com.atguigu.spring5.autowire.Emp" autowire="byName">
+    <bean id="emp" class="com.qyj.spring5.autowire.Emp" autowire="byName">
 <!--        <property name="dept" ref="dept"></property>-->
     </bean>
-    <bean id="dept" class="com.atguigu.spring5.autowire.Dept" ></bean>
+    <bean id="dept" class="com.qyj.spring5.autowire.Dept" ></bean>
 
 </beans>

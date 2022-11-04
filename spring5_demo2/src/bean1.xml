@@ -8,15 +8,15 @@
 
     <!-- 开启组件扫描
          1.扫描多个包 使用，隔开
-         2.直接扫描上级 com.atguigu.spring5
+         2.直接扫描上级 com.qyj.spring5
       -->
-    <context:component-scan base-package="com.atguigu.spring5.dao,com.atguigu.spring5.service" use-default-filters="false">
+    <context:component-scan base-package="com.qyj.spring5.dao,com.qyj.spring5.service" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
     </context:component-scan>
 
 
-<!--    <context:component-scan base-package="com.atguigu.spring5.dao,com.atguigu.spring5.service">-->
+<!--    <context:component-scan base-package="com.qyj.spring5.dao,com.qyj.spring5.service">-->
 <!--        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Component"/>-->
 <!--    </context:component-scan>-->
 

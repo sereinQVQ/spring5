@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:component-scan base-package="com"></context:component-scan>
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 基本属性 url、user、password -->
-<!--        <property name="driverClassName" value="${jdbc.driver}" />-->
-        <property name="url" value="mysql:jdbc:mysql://47.100.107.11:3306/user_db" />
-        <property name="username" value="jdbc_user" />
-        <property name="password" value="jdbc_password" />
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://47.100.107.11:3306/user_db" />
+        <property name="username" value="root" />
+        <property name="password" value="+hb450J+=NE5o9ViF*AV" />
 
         <!-- 配置监控统计拦截的filters -->
         <property name="filters" value="stat" />
@@ -36,15 +41,19 @@
         <property name="maxOpenPreparedStatements" value="20" />
     </bean>
 
-    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <!--新建工厂来创建sqlSession,注入dataSource属性-->
+    <bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
-        <property name="mapperLocations" value="classpath*:com/oracle/mapper/*.xml">    </property>
+        <property name="mapperLocations" value="./UserMapper.xml"></property>
     </bean>
 
-    <bean id="configure" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.oracle.dao"></property>
+    <!--进行包的扫描，扫描实体类，并将工厂注入-->
+    <bean id="mapper" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--注入工厂-->
+        <property name="sqlSessionFactory" ref="factory"></property>
+        <!--进行包扫描，扫描mapper包-->
+        <property name="basePackage" value="com.qyj.spring5.dao"></property>
     </bean>
 
-    <mybatis-spring:scan base-package="com.oracle.dao" />
 
 </beans>

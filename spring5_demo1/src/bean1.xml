@@ -6,16 +6,16 @@
 
     <!-- 配置User对象创建 -->
 
-<!--    <bean id="user" class="com.atguigu.spring5.User">-->
+<!--    <bean id="user" class="com.qyj.spring5.User">-->
 
 <!--    </bean>-->
 
 
-<!--    <bean id="book"  class="com.atguigu.spring5.Book" >-->
+<!--    <bean id="book"  class="com.qyj.spring5.Book" >-->
 <!--        <property name="name" value="123"></property>-->
 <!--    </bean>-->
 
-    <bean id="orders" class="com.atguigu.spring5.Orders">
+    <bean id="orders" class="com.qyj.spring5.Orders">
         <constructor-arg name="oname" value="123"></constructor-arg>
         <constructor-arg name="address">
 <!--            <null></null>-->
@@ -23,6 +23,6 @@
         </constructor-arg>
     </bean>
 
-<!--        <bean id="orders" class="com.atguigu.spring5.Orders" p:oname="111" p:address="222"></bean>-->
+<!--        <bean id="orders" class="com.qyj.spring5.Orders" p:oname="111" p:address="222"></bean>-->
 
 </beans>

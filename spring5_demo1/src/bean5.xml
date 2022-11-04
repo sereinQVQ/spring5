@@ -4,10 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="orders" class="com.atguigu.spring5.Orders" init-method="initMethod" destroy-method="destroyMethod">
+    <bean id="orders" class="com.qyj.spring5.Orders" init-method="initMethod" destroy-method="destroyMethod">
         <property name="oname" value="123"></property>
     </bean>
 
-    <bean id="myPost" class="com.atguigu.spring5.bean.myPost"></bean>
+    <bean id="myPost" class="com.qyj.spring5.bean.myPost"></bean>
 
 </beans>
